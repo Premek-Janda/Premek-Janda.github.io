@@ -1,0 +1,63 @@
+body { cursor: none; } a { cursor: none; }
+
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+}
+canvas {
+    background: radial-gradient(circle at top right, #58a258 -2%, black 46%);
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/*  */
+a {
+    color: #1E90FF;
+    text-decoration: none;
+    position: relative;
+    transition: transform 0.2s, color 0.2s;
+}
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s, transform 0.05s;
+    z-index: 1000;
+}
+.cursor.hover {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, .5);
+    border-color: rgba(255, 255, 255, .75);
+}
+.invert-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 999;
+}
+
+
+/*  */
+.hoverable {
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+    position: relative;
+}
