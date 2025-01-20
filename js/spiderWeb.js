@@ -1,4 +1,3 @@
-// SETUP
 const NUMBER_OF_PARTICLES = Math.round(window.innerWidth * window.innerHeight / 7500);
 const DISTANCE = 20_000;
 const pointColor = () => 'rgba(150,150,150,' + (Math.random() * 0.25 + 0.75) + ')';
@@ -25,7 +24,9 @@ class Particle {
         this.color = color;
         this.baseX = x;
         this.baseY = y;
-        this.density = (Math.random() * 30) + 1;
+        this.density = (Math.random() * 100) + 1;
+        this.velocityX = (Math.random() - 0.5) * 0.25;
+        this.velocityY = (Math.random() - 0.5) * 0.25;
     }
 
     draw() {
@@ -36,6 +37,19 @@ class Particle {
     }
 
     update() {
+        // random movement
+        this.x += this.velocityX;
+        this.y += this.velocityY;
+
+        // keep the particles within canvas bounds
+        if (this.x <= 0 || this.x >= canvas.width) {
+            this.velocityX = -this.velocityX;
+        }
+        if (this.y <= 0 || this.y >= canvas.height) {
+            this.velocityY = -this.velocityY;
+        }
+
+        // mouse interaction
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -49,15 +63,6 @@ class Particle {
 
             this.x -= directionX;
             this.y -= directionY;
-        } else {
-            if (this.x !== this.baseX) {
-                let dx = this.x - this.baseX;
-                this.x -= dx / 10;
-            }
-            if (this.y !== this.baseY) {
-                let dy = this.y - this.baseY;
-                this.y -= dy / 10;
-            }
         }
 
         this.draw();
