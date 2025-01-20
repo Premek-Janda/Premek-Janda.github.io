@@ -84,13 +84,17 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 600px;
+    background: #0d0d0dbd;
+    border-radius: 2rem;
+    backdrop-filter: blur(1px);
+    box-shadow: #58a25816 0px 14px 28px, #58a2581d 0px 10px 10px;
 }
 
 main img {
     border-radius: 50%;
     width: 100px;
     transform: translateY(-50%);
-    margin-bottom: 2rem;
+    margin-bottom: -2rem;
 }
 
 main p {
@@ -118,3 +122,10 @@ li {
     text-align: center;
 }
 
+a {
+    color: #58a258;
+}
+
+a:hover {
+    color: #87cb87;
+}
