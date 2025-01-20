@@ -84,6 +84,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 600px;
+    padding-bottom: 2rem;
     background: #0d0d0dbd;
     border-radius: 2rem;
     backdrop-filter: blur(1px);
