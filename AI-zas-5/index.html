@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Recognition with Camera</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main-container">
+    <div id="camera-container">
+      <video id="video" width="640" autoplay playsinline muted></video>
+    </div>
+    <p id="status"></p>
+
+    <fieldset id="model-selector">
+      <legend>Výběr modelu</legend>
+      <div>
+        <input type="radio" id="model-cocoSsd" name="model-select" value="cocoSsd">
+        <label for="model-cocoSsd">COCO-SSD (detekce objektů)</label>
+      </div>
+      <div>
+        <input type="radio" id="model-mobilenet" name="model-select" value="mobilenet">
+        <label for="model-mobilenet">MobileNet (klasifikace obrázků)</label>
+      </div>
+      <div>
+        <input type="radio" id="model-movenet" name="model-select" value="movenet" checked>
+        <label for="model-movenet">MoveNet (detekce postavy)</label>
+      </div>
+      <div>
+        <input type="radio" id="model-blazepose" name="model-select" value="blazepose">
+        <label for="model-blazepose">BlazePose (detekce postavy s podrobnostmi)</label>
+      </div>
+    </fieldset>
+
+    <div id="controls">
+      <button id="capture-btn" disabled>Vyfotit</button>
+    </div>
+  </div>
+  <div id="history-container">
+    <h2>Historie</h2>
+    <div id="history"></div>
+  </div>
+
+  <!-- Load TensorFlow.js and the COCO-SSD model -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@latest/dist/coco-ssd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@latest/dist/mobilenet.min.js"></script>
+    
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
