@@ -130,3 +130,11 @@ a {
 a:hover {
     color: #87cb87;
 }
+
+h2 {
+    margin-bottom: .5rem;
+}
+
+ul {
+    margin-top: 0rem;
+}
