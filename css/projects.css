@@ -1,0 +1,27 @@
+:root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; color: #f3f4f6; background: #10141b; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1120px; margin: auto; padding: 40px 24px 64px; }
+a { color: #86efac; text-underline-offset: 4px; }
+a:hover { color: #bbf7d0; }
+a:focus-visible { outline: 3px solid #86efac; outline-offset: 5px; }
+.back-link { font-size: 14px; }
+header { padding: 48px 0 32px; }
+.eyebrow { color: #86efac; font-size: 14px; }
+h1 { margin: 12px 0; font-size: clamp(32px, 6vw, 48px); }
+h2 { font-size: 24px; }
+p { color: #b5bdca; line-height: 1.6; }
+.app-link { display: inline-block; margin-top: 12px; padding: 12px 18px; border: 1px solid #48785d; border-radius: 10px; background: #192d24; text-decoration: none; }
+section { padding-top: 16px; border-top: 1px solid #303743; }
+.gallery-note { margin-bottom: 24px; }
+.project-screenshots { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+figure { min-width: 0; margin: 0; }
+figure a { display: block; border-radius: 12px; overflow: hidden; background: #09090b; }
+img { display: block; width: 100%; height: auto; object-fit: contain; }
+figcaption { margin-top: 12px; color: #b5bdca; font-size: 14px; }
+@media (max-width: 640px) {
+  main { padding: 28px 20px 48px; }
+  header { padding-top: 32px; }
+  .project-screenshots { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  img { height: auto; max-height: none; }
+}
